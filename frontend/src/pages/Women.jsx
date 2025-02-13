@@ -14,7 +14,7 @@ function Women() {
     const fetchProducts = async () => {
       try {
         setIsLoading(true);
-        const response = await fetch(`http://localhost:5000/products?category=Women`);
+        const response = await fetch(`${import.meta.env.VITE_API_KEY}/products?category=Women`);
         if (!response.ok) {
           throw new Error(response.status);
         }

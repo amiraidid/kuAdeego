@@ -33,7 +33,7 @@ function SingleProduct() {
     const fetchProduct = async () => {
       try {
         setIsLoading(true);
-        const response = await fetch(`http://localhost:5000/products/${id}`);
+        const response = await fetch(`${import.meta.env.VITE_API_KEY}/products/${id}`);
         if (!response.ok) {
           throw new Error(response.status);
         }

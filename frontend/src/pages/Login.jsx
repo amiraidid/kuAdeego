@@ -20,7 +20,7 @@ function Login() {
 
   const handleLogin = async() => {
     try {
-      const res = await axios.post(`http://localhost:5000/auth/login`, inputs)
+      const res = await axios.post(`${import.meta.env.VITE_API_URL}/auth/login`, inputs)
       console.log(res.data)
       toast({title: 'login account', description: res.data.message, status: 'success', isClosable: 'true'})
       sessionStorage.setItem('token', res.data.token)

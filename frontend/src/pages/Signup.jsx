@@ -20,7 +20,7 @@ function Signup() {
 
   const handleSignUp = async() => {
     try {
-      const res = await axios.post('http://localhost:5000/auth/signup', inputs)
+      const res = await axios.post(`${import.meta.env.VITE_API_KEY}/auth/signup`, inputs)
       toast({title: 'a new account', description: res.data.message, status:'success', isClosable: 'true'})
     } catch (error) {
       toast({title: 'Error', description: error.message, status:'error', isClosable: 'true'})

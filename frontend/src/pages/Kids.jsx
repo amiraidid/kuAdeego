@@ -14,7 +14,7 @@ function Kids() {
     const fetchProducts = async () => {
       try {
         setIsLoading(true);
-        const response = await fetch(`http://localhost:5000/products?category=kids`);
+        const response = await fetch(`${import.meta.env.VITE_API_KEY}/products?category=kids`);
         if (!response.ok) {
           throw new Error(response.status);
         }
