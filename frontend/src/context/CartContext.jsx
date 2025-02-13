@@ -14,7 +14,7 @@ export const CartProvider = ({ children }) => {
     try {
       setIsLoading(true);
       const response = await fetch(
-        `http://localhost:5000/cartlist/add-cart/${pid}`,
+        `${import.meta.env.VITE_API_KEY}/cartlist/add-cart/${pid}`,
         {
           method: "POST",
           headers: {

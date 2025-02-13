@@ -17,7 +17,7 @@ export const AdminProvider = ({ children }) => {
             if (location.pathname.includes("admin")) {
                 try {
                     setIsLoading(true);
-                    const response = await fetch("http://localhost:5000/admin/users", {
+                    const response = await fetch(`${import.meta.env.VITE_API_KEY}/admin/users}`, {
                         method: "GET",
                         headers: {
                             "Content-Type": "application/json",

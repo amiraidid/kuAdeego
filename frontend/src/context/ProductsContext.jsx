@@ -14,7 +14,7 @@ export const ProductsProvider = ({children}) => {
         const fetchProducts = async() => {
             try {
                 setIsLoading(true)
-                const response = await fetch(`http://localhost:5000/products?category=${value}&type=`)
+                const response = await fetch(`${import.meta.env.VITE_API_KEY}/products?category=${value}&type=`)
                 if (!response.ok) {
                   throw new Error(response.status)
                 }
